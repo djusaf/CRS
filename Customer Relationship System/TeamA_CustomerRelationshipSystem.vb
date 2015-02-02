@@ -27,6 +27,10 @@ Public Class CustomerRelationshipSystem
 
 
     Private Sub Sales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'CustomersDataSet11.Customer_Info' table. You can move, or remove it, as needed.
+        Me.Customer_InfoTableAdapter.Fill(Me.CustomersDataSet11.Customer_Info)
+        'TODO: This line of code loads data into the 'CustomersDataSet11.Customer_Info' table. You can move, or remove it, as needed.
+        Me.Customer_InfoTableAdapter.Fill(Me.CustomersDataSet11.Customer_Info)
         Dim conn As New SqlConnection(connstring)
         Dim cmd As New SqlCommand("SELECT * FROM Customer_Info", conn)
         Dim cmd2 As New SqlCommand("SELECT * FROM Sales", conn)
@@ -281,4 +285,5 @@ Public Class CustomerRelationshipSystem
         End If
 
     End Sub
+
 End Class
