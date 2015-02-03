@@ -81,13 +81,12 @@ Partial Class CustomerRelationshipSystem
         Me.Last_Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Annual_Sales = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Monthly_Sales = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Discount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.CustomersDataSet1 = New Customer_Relationship_System.CustomersDataSet()
         Me.Customer_InfoTableAdapter = New Customer_Relationship_System.CustomersDataSet1TableAdapters.Customer_InfoTableAdapter()
-        Me.Discount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbc_Info.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -582,7 +581,6 @@ Partial Class CustomerRelationshipSystem
         '
         'First_Name
         '
-<<<<<<< HEAD
         Me.First_Name.Text = "First Name"
         Me.First_Name.Width = 150
         '
@@ -600,17 +598,24 @@ Partial Class CustomerRelationshipSystem
         '
         Me.Monthly_Sales.Text = "Monthly Sales"
         Me.Monthly_Sales.Width = 150
-=======
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
-        Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'Last_Name
+        'Discount
+        '
+        Me.Discount.Text = "Discount Amount"
+        Me.Discount.Width = 150
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.RadioButton1)
+        Me.GroupBox6.Controls.Add(Me.RadioButton2)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(218, 94)
+        Me.GroupBox6.TabIndex = 4
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Discount"
+        '
+        'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
@@ -621,45 +626,16 @@ Partial Class CustomerRelationshipSystem
         Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
-        'Annual_Sales
-        '
-        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
-        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Monthly_Sales
-        '
-        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
->>>>>>> origin/master
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.RadioButton3)
-        Me.GroupBox6.Controls.Add(Me.RadioButton1)
-        Me.GroupBox6.Controls.Add(Me.RadioButton2)
-        Me.GroupBox6.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(218, 94)
-        Me.GroupBox6.TabIndex = 4
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Discount"
-        '
-        'RadioButton3
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales})
-        Me.ListView1.Location = New System.Drawing.Point(227, 3)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(765, 402)
-        Me.ListView1.TabIndex = 5
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'RadioButton1
-        '
-        Me.First_Name.Text = "First Name"
-        '
         'RadioButton2
         '
-        Me.Last_Name.Text = "Last Name"
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton2.TabIndex = 2
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'CustomersDataSet1
         '
@@ -669,11 +645,6 @@ Partial Class CustomerRelationshipSystem
         'Customer_InfoTableAdapter
         '
         Me.Customer_InfoTableAdapter.ClearBeforeFill = True
-        '
-        'Discount
-        '
-        Me.Discount.Text = "Discount Amount"
-        Me.Discount.Width = 150
         '
         'CustomerRelationshipSystem
         '
@@ -760,7 +731,6 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents SecondContactDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ThirdContactDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
@@ -768,11 +738,9 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents Last_Name As System.Windows.Forms.ColumnHeader
     Friend WithEvents Annual_Sales As System.Windows.Forms.ColumnHeader
     Friend WithEvents Monthly_Sales As System.Windows.Forms.ColumnHeader
-<<<<<<< HEAD
+
     Friend WithEvents Discount As System.Windows.Forms.ColumnHeader
-=======
     Friend WithEvents txt_secondContactDate As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
->>>>>>> origin/master
 
 End Class
