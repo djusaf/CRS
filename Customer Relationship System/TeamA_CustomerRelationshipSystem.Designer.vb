@@ -76,6 +76,16 @@ Partial Class CustomerRelationshipSystem
         Me.CustomersDataSet11BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomersDataSet11 = New Customer_Relationship_System.CustomersDataSet1()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.txt_searchEmail = New System.Windows.Forms.TextBox()
+        Me.txt_searchLast = New System.Windows.Forms.TextBox()
+        Me.txt_searchFirst = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.non_member = New System.Windows.Forms.RadioButton()
+        Me.rb_member = New System.Windows.Forms.RadioButton()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.First_Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Last_Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -83,6 +93,7 @@ Partial Class CustomerRelationshipSystem
         Me.Monthly_Sales = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Discount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.CustomersDataSet1 = New Customer_Relationship_System.CustomersDataSet()
@@ -99,6 +110,8 @@ Partial Class CustomerRelationshipSystem
         CType(Me.CustomersDataSet11BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -560,6 +573,8 @@ Partial Class CustomerRelationshipSystem
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.GroupBox7)
+        Me.TabPage3.Controls.Add(Me.GroupBox5)
         Me.TabPage3.Controls.Add(Me.ListView1)
         Me.TabPage3.Controls.Add(Me.GroupBox6)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
@@ -569,12 +584,108 @@ Partial Class CustomerRelationshipSystem
         Me.TabPage3.Text = "Query"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.txt_searchEmail)
+        Me.GroupBox7.Controls.Add(Me.txt_searchLast)
+        Me.GroupBox7.Controls.Add(Me.txt_searchFirst)
+        Me.GroupBox7.Controls.Add(Me.Label14)
+        Me.GroupBox7.Controls.Add(Me.Label13)
+        Me.GroupBox7.Controls.Add(Me.Label12)
+        Me.GroupBox7.Location = New System.Drawing.Point(28, 21)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(239, 101)
+        Me.GroupBox7.TabIndex = 7
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Search"
+        '
+        'txt_searchEmail
+        '
+        Me.txt_searchEmail.Location = New System.Drawing.Point(92, 66)
+        Me.txt_searchEmail.Name = "txt_searchEmail"
+        Me.txt_searchEmail.Size = New System.Drawing.Size(141, 20)
+        Me.txt_searchEmail.TabIndex = 7
+        '
+        'txt_searchLast
+        '
+        Me.txt_searchLast.Location = New System.Drawing.Point(92, 40)
+        Me.txt_searchLast.Name = "txt_searchLast"
+        Me.txt_searchLast.Size = New System.Drawing.Size(141, 20)
+        Me.txt_searchLast.TabIndex = 6
+        '
+        'txt_searchFirst
+        '
+        Me.txt_searchFirst.Location = New System.Drawing.Point(92, 17)
+        Me.txt_searchFirst.Name = "txt_searchFirst"
+        Me.txt_searchFirst.Size = New System.Drawing.Size(141, 20)
+        Me.txt_searchFirst.TabIndex = 4
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 69)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(35, 13)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "Email:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 43)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(61, 13)
+        Me.Label13.TabIndex = 1
+        Me.Label13.Text = "Last Name:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 20)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(60, 13)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "First Name:"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.non_member)
+        Me.GroupBox5.Controls.Add(Me.rb_member)
+        Me.GroupBox5.Location = New System.Drawing.Point(28, 140)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(239, 41)
+        Me.GroupBox5.TabIndex = 6
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "List of Member or Non-Members"
+        '
+        'non_member
+        '
+        Me.non_member.AutoSize = True
+        Me.non_member.Location = New System.Drawing.Point(92, 19)
+        Me.non_member.Name = "non_member"
+        Me.non_member.Size = New System.Drawing.Size(86, 17)
+        Me.non_member.TabIndex = 3
+        Me.non_member.TabStop = True
+        Me.non_member.Text = "Non-Member"
+        Me.non_member.UseVisualStyleBackColor = True
+        '
+        'rb_member
+        '
+        Me.rb_member.AutoSize = True
+        Me.rb_member.Location = New System.Drawing.Point(6, 19)
+        Me.rb_member.Name = "rb_member"
+        Me.rb_member.Size = New System.Drawing.Size(68, 17)
+        Me.rb_member.TabIndex = 2
+        Me.rb_member.TabStop = True
+        Me.rb_member.Text = "Members"
+        Me.rb_member.UseVisualStyleBackColor = True
+        '
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales, Me.Discount})
-        Me.ListView1.Location = New System.Drawing.Point(227, 3)
+        Me.ListView1.Location = New System.Drawing.Point(334, 21)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(765, 402)
+        Me.ListView1.Size = New System.Drawing.Size(751, 402)
         Me.ListView1.TabIndex = 5
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -601,22 +712,6 @@ Partial Class CustomerRelationshipSystem
         '
         'Discount
         '
-        Me.Discount.Text = "Discount Amount"
-        Me.Discount.Width = 150
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.RadioButton1)
-        Me.GroupBox6.Controls.Add(Me.RadioButton2)
-        Me.GroupBox6.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(218, 94)
-        Me.GroupBox6.TabIndex = 4
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Discount"
-        '
-        'RadioButton1
-        '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
         Me.RadioButton1.Name = "RadioButton1"
@@ -626,16 +721,45 @@ Partial Class CustomerRelationshipSystem
         Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'Annual_Sales
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
+        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Monthly_Sales
+        '
+        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
+>>>>>>> origin/master
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.RadioButton3)
+        Me.GroupBox6.Controls.Add(Me.RadioButton1)
+        Me.GroupBox6.Controls.Add(Me.RadioButton2)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(239, 95)
+        Me.GroupBox6.TabIndex = 4
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Discount"
+        '
+        'RadioButton3
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales})
+        Me.ListView1.Location = New System.Drawing.Point(227, 3)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(765, 402)
+        Me.ListView1.TabIndex = 5
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'RadioButton1
+        '
+        Me.First_Name.Text = "First Name"
+        '
+        'rb_goldMember
+        '
+        Me.Last_Name.Text = "Last Name"
         '
         'CustomersDataSet1
         '
@@ -653,7 +777,7 @@ Partial Class CustomerRelationshipSystem
         Me.ClientSize = New System.Drawing.Size(1153, 526)
         Me.Controls.Add(Me.tbc_Info)
         Me.Name = "CustomerRelationshipSystem"
-        Me.Text = "a"
+        Me.Text = "Customer Relationship System"
         Me.tbc_Info.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -671,6 +795,10 @@ Partial Class CustomerRelationshipSystem
         CType(Me.CustomersDataSet11BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomersDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -731,6 +859,7 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents SecondContactDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ThirdContactDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
@@ -738,9 +867,10 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents Last_Name As System.Windows.Forms.ColumnHeader
     Friend WithEvents Annual_Sales As System.Windows.Forms.ColumnHeader
     Friend WithEvents Monthly_Sales As System.Windows.Forms.ColumnHeader
-
+<<<<<<< HEAD
     Friend WithEvents Discount As System.Windows.Forms.ColumnHeader
     Friend WithEvents txt_secondContactDate As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
+>>>>>>> origin/master
 
 End Class
