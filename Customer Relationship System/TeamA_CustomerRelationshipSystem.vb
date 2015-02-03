@@ -303,4 +303,7 @@ Public Class CustomerRelationshipSystem
             i = i + 1
         Next
     End Sub
+    Public Sub clearListView()
+
+    End Sub
 End Class

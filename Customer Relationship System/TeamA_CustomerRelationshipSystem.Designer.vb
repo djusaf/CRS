@@ -80,17 +80,17 @@ Partial Class CustomerRelationshipSystem
         Me.CustomersDataSet11BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomersDataSet11 = New Customer_Relationship_System.CustomersDataSet1()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.CustomersDataSet1 = New Customer_Relationship_System.CustomersDataSet()
-        Me.Customer_InfoTableAdapter = New Customer_Relationship_System.CustomersDataSet1TableAdapters.Customer_InfoTableAdapter()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.First_Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Last_Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Annual_Sales = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Monthly_Sales = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.CustomersDataSet1 = New Customer_Relationship_System.CustomersDataSet()
+        Me.Customer_InfoTableAdapter = New Customer_Relationship_System.CustomersDataSet1TableAdapters.Customer_InfoTableAdapter()
         Me.tbc_Info.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -104,8 +104,8 @@ Partial Class CustomerRelationshipSystem
         CType(Me.CustomersDataSet11BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
-        CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
+        CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tbc_Info
@@ -613,60 +613,6 @@ Partial Class CustomerRelationshipSystem
         Me.TabPage3.Text = "Query"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 65)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(199, 17)
-        Me.RadioButton3.TabIndex = 3
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Customers Recieving 5% Disconnect"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(205, 17)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'CustomersDataSet1
-        '
-        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
-        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Customer_InfoTableAdapter
-        '
-        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.RadioButton3)
-        Me.GroupBox6.Controls.Add(Me.RadioButton1)
-        Me.GroupBox6.Controls.Add(Me.RadioButton2)
-        Me.GroupBox6.Location = New System.Drawing.Point(3, 116)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(218, 94)
-        Me.GroupBox6.TabIndex = 4
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Discount"
-        '
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales})
@@ -680,18 +626,76 @@ Partial Class CustomerRelationshipSystem
         'First_Name
         '
         Me.First_Name.Text = "First Name"
+        Me.First_Name.Width = 127
         '
         'Last_Name
         '
         Me.Last_Name.Text = "Last Name"
+        Me.Last_Name.Width = 151
         '
         'Annual_Sales
         '
         Me.Annual_Sales.Text = "Annual Sales"
+        Me.Annual_Sales.Width = 103
         '
         'Monthly_Sales
         '
         Me.Monthly_Sales.Text = "Monthly Sales"
+        Me.Monthly_Sales.Width = 119
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.RadioButton3)
+        Me.GroupBox6.Controls.Add(Me.RadioButton1)
+        Me.GroupBox6.Controls.Add(Me.RadioButton2)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 116)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(218, 94)
+        Me.GroupBox6.TabIndex = 4
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Discount"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(6, 65)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(199, 17)
+        Me.RadioButton3.TabIndex = 3
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Customers Recieving 5% Disconnect"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton1.TabIndex = 1
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton2.TabIndex = 2
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'CustomersDataSet1
+        '
+        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
+        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Customer_InfoTableAdapter
+        '
+        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
         '
         'CustomerRelationshipSystem
         '
@@ -720,9 +724,9 @@ Partial Class CustomerRelationshipSystem
         CType(Me.CustomersDataSet11BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomersDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
-        CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
