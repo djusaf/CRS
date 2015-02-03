@@ -13,6 +13,7 @@ Public Class CustomerRelationshipSystem
     Dim pnumber As New List(Of String)
     Dim email As New List(Of String)
     Dim currentCustomer As New List(Of String)
+    Dim membership_types As New List(Of String)
 
     Dim firstContactDate As New List(Of String)
     Dim secondContactDate As New List(Of String)
@@ -46,6 +47,7 @@ Public Class CustomerRelationshipSystem
                 pnumber.Add(rd("phoneNumber").ToString)
                 email.Add(rd("email").ToString)
                 currentCustomer.Add(rd("currentCustomer").ToString)
+                membership_types.Add(rd("membership_type").ToString)
 
                 firstContactDate.Add(rd("firstContactDate").ToString)
                 secondContactDate.Add(rd("secondContactDate").ToString)
@@ -299,8 +301,23 @@ Public Class CustomerRelationshipSystem
 
     Private Sub RadioButton1_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         Dim i As Integer
-        For Each item As String In asales
-            If (Val(item) > 5000) Then
+        For Each item As String In membership_types
+            If (Val(item) = 1) Then
+                ListView1.Refresh()
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+            ElseIf (Val(item) = 2) Then
+                ListView1.Refresh()
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+            ElseIf (Val(item) = 2) Then
+                ListView1.Refresh()
                 Dim Populate As New ListViewItem
                 Populate = ListView1.Items.Add(fnames(i))
                 Populate.SubItems.Add(lnames(i))
@@ -309,5 +326,8 @@ Public Class CustomerRelationshipSystem
             End If
             i = i + 1
         Next
+    End Sub
+    Public Sub clearListView()
+
     End Sub
 End Class

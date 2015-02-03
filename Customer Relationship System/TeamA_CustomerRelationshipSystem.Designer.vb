@@ -581,19 +581,34 @@ Partial Class CustomerRelationshipSystem
         '
         'First_Name
         '
-        Me.First_Name.Text = "First Name"
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton2.TabIndex = 2
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'Last_Name
         '
-        Me.Last_Name.Text = "Last Name"
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton1.TabIndex = 1
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'Annual_Sales
         '
-        Me.Annual_Sales.Text = "Annual Sales"
+        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
+        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Monthly_Sales
         '
-        Me.Monthly_Sales.Text = "Monthly Sales"
+        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
         '
         'GroupBox6
         '
@@ -609,36 +624,21 @@ Partial Class CustomerRelationshipSystem
         '
         'RadioButton3
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 65)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(199, 17)
-        Me.RadioButton3.TabIndex = 3
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Customers Recieving 5% Disconnect"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales})
+        Me.ListView1.Location = New System.Drawing.Point(227, 3)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(765, 402)
+        Me.ListView1.TabIndex = 5
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'RadioButton1
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(205, 17)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.First_Name.Text = "First Name"
         '
         'RadioButton2
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Last_Name.Text = "Last Name"
         '
         'CustomersDataSet1
         '
