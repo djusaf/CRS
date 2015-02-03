@@ -92,17 +92,15 @@ Public Class CustomerRelationshipSystem
     End Sub
 
 
-    Private Sub btn_NewContact_Click(sender As Object, e As EventArgs)
+    Private Sub btn_NewContact_Click(sender As Object, e As EventArgs) Handles btn_NewContact.Click
 
         '***************************DATABASE CONNECTION INFORMATION******************************
         Dim conn As New SqlConnection(connstring)
         Dim cmd As New SqlCommand("", conn)
-        Dim cmd2 As New SqlCommand("", conn)
 
         conn.Open()
-        cmd2.CommandText = "INSERT INTO Sales values(0, 0)"
 
-        cmd.CommandText = "INSERT INTO Customer_Info values(@firstName, @middleName, @lastName, @phoneNumber, @email, @currentCustomer, @firstContact, @secondContact, thridContactDate)"
+        cmd.CommandText = "INSERT INTO Customer_Info values(@firstName, @middleName, @lastName, @phoneNumber, @email, @currentCustomer, @firstContact, @secondContact, @thirdContact)"
 
         cmd.Parameters.Add(New SqlParameter("@firstName", SqlDbType.VarChar, 50))
         cmd.Parameters("@firstName").Value = txt_firstName.Text
@@ -128,7 +126,28 @@ Public Class CustomerRelationshipSystem
         cmd.Parameters("@email").Value = txt_Email.Text
         email.Add(txt_Email.Text)
 
-        currentCustomer.Add("No")
+        If rb_Yes.Checked = True Then
+            cmd.Parameters.Add(New SqlParameter("@currentCustomer", SqlDbType.VarChar, 10))
+            cmd.Parameters("@currentCustomer").Value = "Yes"
+        End If
+
+        If rb_No.Checked = True Then
+            cmd.Parameters.Add(New SqlParameter("@currentCustomer", SqlDbType.NChar, 10))
+            cmd.Parameters("@currentCustomer").Value = "No"
+        End If
+
+        cmd.Parameters.Add(New SqlParameter("@firstContact", SqlDbType.Char, 10))
+        cmd.Parameters("@firstContact").Value = txt_firstContactDate.Text
+        firstContactDate.Add(txt_firstContactDate.Text)
+
+        cmd.Parameters.Add(New SqlParameter("@secondContact", SqlDbType.Char, 10))
+        cmd.Parameters("@secondContact").Value = txt_secondContactDate.Text
+        secondContactDate.Add(txt_secondContactDate.Text)
+
+        cmd.Parameters.Add(New SqlParameter("@thirdContact", SqlDbType.Char, 10))
+        cmd.Parameters("@thirdContact").Value = txt_thirdContactDate.Text
+        thirdContactDate.Add(txt_thirdContactDate.Text)
+
         firstContactDate.Add("")
         secondContactDate.Add("")
         thirdContactDate.Add("")
@@ -136,7 +155,6 @@ Public Class CustomerRelationshipSystem
 
         Try
             cmd.ExecuteNonQuery()
-            cmd2.ExecuteNonQuery()
             MessageBox.Show("Successful Database Insert")
             conn.Close()
         Catch ex As Exception
@@ -224,22 +242,6 @@ Public Class CustomerRelationshipSystem
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        For i = 0 To email.Count - 1
-            If (email(i).Contains(txt_emailSearch.Text)) Then
-                txt_firstName.Text = ""
-                txt_middleName.Text = ""
-                txt_lastName.Text = ""
-                txt_phoneNumber.Text = ""
-                txt_Email.Text = ""
-            End If
-        Next
-    End Sub
-
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
-    End Sub
-
     Private Sub ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim combobox As ComboBox = CType(sender, ComboBox)
 
@@ -255,12 +257,17 @@ Public Class CustomerRelationshipSystem
             txt_monthlySales.Text = FormatCurrency(msales(curValue))
             If (String.CompareOrdinal(currentCustomer(curValue), "YES")) Then
                 rb_Yes.Checked = True
+                btn_Update.Enabled = False
+                txt_secondContactDate.Visible = False
+                txt_thirdContactDate.Visible = False
+                Label10.Visible = False
+                Label9.Visible = False
             Else
                 rb_No.Checked = True
             End If
 
             If (String.IsNullOrEmpty(firstContactDate(curValue))) Then
-                txt_firstContactDate.Text = ""
+                'txt_firstContactDate.Text = ""
                 txt_firstContactDate.ReadOnly = False
             Else
                 txt_firstContactDate.Text = firstContactDate(curValue)
