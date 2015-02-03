@@ -59,10 +59,6 @@ Partial Class CustomerRelationshipSystem
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_NewContact = New System.Windows.Forms.Button()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.txt_emailSearch = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.lbl_test = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -98,7 +94,6 @@ Partial Class CustomerRelationshipSystem
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,7 +109,7 @@ Partial Class CustomerRelationshipSystem
         Me.tbc_Info.Controls.Add(Me.TabPage1)
         Me.tbc_Info.Controls.Add(Me.TabPage2)
         Me.tbc_Info.Controls.Add(Me.TabPage3)
-        Me.tbc_Info.Location = New System.Drawing.Point(12, 14)
+        Me.tbc_Info.Location = New System.Drawing.Point(12, 12)
         Me.tbc_Info.Name = "tbc_Info"
         Me.tbc_Info.SelectedIndex = 0
         Me.tbc_Info.Size = New System.Drawing.Size(1129, 484)
@@ -130,14 +125,13 @@ Partial Class CustomerRelationshipSystem
         Me.TabPage1.Controls.Add(Me.btn_Back)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.btn_NewContact)
-        Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Controls.Add(Me.lbl_test)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1121, 458)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Information"
+        Me.TabPage1.Text = "Add/Update"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox4
@@ -184,7 +178,7 @@ Partial Class CustomerRelationshipSystem
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.lbl_firstContactDate)
-        Me.GroupBox3.Location = New System.Drawing.Point(80, 278)
+        Me.GroupBox3.Location = New System.Drawing.Point(319, 127)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(233, 93)
         Me.GroupBox3.TabIndex = 30
@@ -456,44 +450,6 @@ Partial Class CustomerRelationshipSystem
         Me.btn_NewContact.Text = "Add Contact"
         Me.btn_NewContact.UseVisualStyleBackColor = True
         '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.txt_emailSearch)
-        Me.GroupBox5.Controls.Add(Me.Button1)
-        Me.GroupBox5.Controls.Add(Me.Label13)
-        Me.GroupBox5.Location = New System.Drawing.Point(319, 127)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(266, 136)
-        Me.GroupBox5.TabIndex = 34
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Search"
-        '
-        'txt_emailSearch
-        '
-        Me.txt_emailSearch.Location = New System.Drawing.Point(113, 42)
-        Me.txt_emailSearch.Name = "txt_emailSearch"
-        Me.txt_emailSearch.Size = New System.Drawing.Size(100, 20)
-        Me.txt_emailSearch.TabIndex = 3
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(49, 80)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(164, 41)
-        Me.Button1.TabIndex = 24
-        Me.Button1.Text = "Search"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(15, 45)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(35, 13)
-        Me.Label13.TabIndex = 0
-        Me.Label13.Text = "Email:"
-        '
         'lbl_test
         '
         Me.lbl_test.AutoSize = True
@@ -510,7 +466,7 @@ Partial Class CustomerRelationshipSystem
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1121, 458)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Contact"
+        Me.TabPage2.Text = "Information"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'DataGridView1
@@ -626,6 +582,7 @@ Partial Class CustomerRelationshipSystem
         '
         'First_Name
         '
+<<<<<<< HEAD
         Me.First_Name.Text = "First Name"
         Me.First_Name.Width = 150
         '
@@ -643,6 +600,36 @@ Partial Class CustomerRelationshipSystem
         '
         Me.Monthly_Sales.Text = "Monthly Sales"
         Me.Monthly_Sales.Width = 150
+=======
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton2.TabIndex = 2
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'Last_Name
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton1.TabIndex = 1
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'Annual_Sales
+        '
+        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
+        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Monthly_Sales
+        '
+        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
+>>>>>>> origin/master
         '
         'GroupBox6
         '
@@ -658,36 +645,21 @@ Partial Class CustomerRelationshipSystem
         '
         'RadioButton3
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 65)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(107, 17)
-        Me.RadioButton3.TabIndex = 3
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Platinum Sponsor"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales})
+        Me.ListView1.Location = New System.Drawing.Point(227, 3)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(765, 402)
+        Me.ListView1.TabIndex = 5
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'RadioButton1
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(88, 17)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Gold Member"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.First_Name.Text = "First Name"
         '
         'RadioButton2
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(92, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Silver Member"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Last_Name.Text = "Last Name"
         '
         'CustomersDataSet1
         '
@@ -722,8 +694,6 @@ Partial Class CustomerRelationshipSystem
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -743,10 +713,8 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents rb_Yes As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_thirdContactDate As System.Windows.Forms.TextBox
-    Friend WithEvents txt_secondContactDate As System.Windows.Forms.TextBox
     Friend WithEvents txt_firstContactDate As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
@@ -772,10 +740,6 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btn_NewContact As System.Windows.Forms.Button
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents txt_emailSearch As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents lbl_test As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
@@ -804,6 +768,11 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents Last_Name As System.Windows.Forms.ColumnHeader
     Friend WithEvents Annual_Sales As System.Windows.Forms.ColumnHeader
     Friend WithEvents Monthly_Sales As System.Windows.Forms.ColumnHeader
+<<<<<<< HEAD
     Friend WithEvents Discount As System.Windows.Forms.ColumnHeader
+=======
+    Friend WithEvents txt_secondContactDate As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+>>>>>>> origin/master
 
 End Class
