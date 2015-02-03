@@ -299,42 +299,126 @@ Public Class CustomerRelationshipSystem
         CustomerInfoBindingSource.Filter = DataGridViewColumnSortMode.Automatic
     End Sub
 
-    Private Sub RadioButton1_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+    Private Sub rb_goldMember_CheckedChanged(sender As Object, e As EventArgs) Handles rb_goldMember.CheckedChanged
         Dim i As Integer
         For Each item As String In membership_types
-            If (Val(item) = 1) Then
+            If (item = "2") Then
                 ListView1.Refresh()
                 Dim Populate As New ListViewItem
                 Populate = ListView1.Items.Add(fnames(i))
                 Populate.SubItems.Add(lnames(i))
                 Populate.SubItems.Add(asales(i))
                 Populate.SubItems.Add(msales(i))
-                Populate.SubItems.Add(asales(i) * (1 - 0.25))
-            ElseIf (Val(item) = 2) Then
-                ListView1.Refresh()
-                Dim Populate As New ListViewItem
-                Populate = ListView1.Items.Add(fnames(i))
-                Populate.SubItems.Add(lnames(i))
-                Populate.SubItems.Add(asales(i))
-                Populate.SubItems.Add(msales(i))
-                Populate.SubItems.Add(asales(i) * (1 - 0.25))
-            ElseIf (Val(item) = 2) Then
-                ListView1.Refresh()
-                Dim Populate As New ListViewItem
-                Populate = ListView1.Items.Add(fnames(i))
-                Populate.SubItems.Add(lnames(i))
-                Populate.SubItems.Add(asales(i))
-                Populate.SubItems.Add(msales(i))
-                Populate.SubItems.Add(asales(i) * (1 - 0.25))
+                Populate.SubItems.Add(asales(i) * (1 - 0.15))
             End If
             i = i + 1
         Next
     End Sub
-    Public Sub clearListView()
 
+    Private Sub rb_silverMember_CheckedChanged(sender As Object, e As EventArgs) Handles rb_silverMember.CheckedChanged
+        Dim i As Integer
+        For Each item As String In membership_types
+            If (item = "1") Then
+                ListView1.Refresh()
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+                Populate.SubItems.Add(asales(i) * (1 - 0.05))
+            End If
+            i = i + 1
+        Next
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+    Private Sub rb_platinumMember_CheckedChanged(sender As Object, e As EventArgs) Handles rb_platinumMember.CheckedChanged
+        Dim i As Integer
+        For Each item As String In membership_types
+            If (item = "3") Then
+                ListView1.Refresh()
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+                Populate.SubItems.Add(asales(i) * (1 - 0.05))
+            End If
+            i = i + 1
+        Next
+    End Sub
 
+    Private Sub rb_member_CheckedChanged(sender As Object, e As EventArgs) Handles rb_member.CheckedChanged
+        Dim i As Integer
+        For Each item As String In membership_types
+            If (item = "1" Or item = "2" Or item = "3") Then
+                ListView1.Refresh()
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+            End If
+            i = i + 1
+        Next
+    End Sub
+
+    Private Sub non_member_CheckedChanged(sender As Object, e As EventArgs) Handles non_member.CheckedChanged
+        Dim i As Integer
+        For Each item As String In membership_types
+            If (item = "4") Then
+                ListView1.Refresh()
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+            End If
+            i = i + 1
+        Next
+    End Sub
+
+    Private Sub txt_searchFirst_TextChanged(sender As Object, e As EventArgs) Handles txt_searchFirst.TextChanged
+        Dim i As Integer
+        For Each item As String In fnames
+            If (txt_searchFirst.Text = item) Then
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+                Exit For
+            End If
+            i = i + 1
+        Next
+    End Sub
+
+    Private Sub txt_searchLast_TextChanged(sender As Object, e As EventArgs) Handles txt_searchLast.TextChanged
+        Dim i As Integer
+        For Each item As String In lnames
+            If (txt_searchLast.Text = item) Then
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+                Exit For
+            End If
+            i = i + 1
+        Next
+    End Sub
+
+    Private Sub txt_searchEmail_TextChanged(sender As Object, e As EventArgs) Handles txt_searchEmail.TextChanged
+        Dim i As Integer
+        For Each item As String In email
+            If (txt_searchEmail.Text = item) Then
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+                Exit For
+            End If
+            i = i + 1
+        Next
     End Sub
 End Class
