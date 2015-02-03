@@ -33,6 +33,7 @@ Public Class CustomerRelationshipSystem
         Me.Customer_InfoTableAdapter.Fill(Me.CustomersDataSet11.Customer_Info)
         Dim conn As New SqlConnection(connstring)
         Dim cmd As New SqlCommand("SELECT * FROM Customer_Info", conn)
+        Dim cmd2 As New SqlCommand("SELECT * FROM Sales", conn)
         '******Retreives First Name only from the database to populate the combobox
         Try
             conn.Open()
@@ -47,16 +48,42 @@ Public Class CustomerRelationshipSystem
                 currentCustomer.Add(rd("currentCustomer").ToString)
 
                 firstContactDate.Add(rd("firstContactDate").ToString)
+                secondContactDate.Add(rd("secondContactDate").ToString)
+                thirdContactDate.Add(rd("thirdContactDate").ToString)
 
             End While
             rd.Close()
             conn.Close()
 
+            conn.Open()
+            Dim rd2 As SqlDataReader = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
+            While rd2.Read()
+                msales.Add(rd2("Monthly_Sales").ToString)
+                asales.Add(rd2("Annual_Sales").ToString)
+            End While
+            rd2.Close()
+            conn.Close()
+
+            Me.ComboBox1.Items.Clear()
+            Me.ComboBox1.Items.AddRange(fnames.ToArray)
+
         Catch ex As Exception
             MessageBox.Show(e.ToString)
         End Try
 
-        mtxt_phoneNumber.Mask = "(000) 000-0000"
+
+    End Sub
+
+    Private Sub btn_Update_Click(sender As Object, e As EventArgs)
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        con.ConnectionString = connstring
+
+        con.Open()
+        cmd.Connection = con
+        cmd.CommandText = "UPDATE Sales SET Monthly_Sales =" & txt_monthlySales.Text & ", Annual_Sales =" & txt_annualSales.Text & " WHERE Id=" & id(curValue) & ""
+        cmd.ExecuteNonQuery()
+        con.Close()
 
     End Sub
 
@@ -64,15 +91,18 @@ Public Class CustomerRelationshipSystem
         Me.Close()
     End Sub
 
-    Private Sub btn_NewContact_Click(sender As Object, e As EventArgs) Handles btn_NewContact.Click
+
+    Private Sub btn_NewContact_Click(sender As Object, e As EventArgs)
 
         '***************************DATABASE CONNECTION INFORMATION******************************
         Dim conn As New SqlConnection(connstring)
         Dim cmd As New SqlCommand("", conn)
+        Dim cmd2 As New SqlCommand("", conn)
 
         conn.Open()
+        cmd2.CommandText = "INSERT INTO Sales values(0, 0)"
 
-        cmd.CommandText = "INSERT INTO Customer_Info values(@firstName, @middleName, @lastName, @phoneNumber, @email, @currentCustomer, @firstContact, @secondContact, @thirdContact)"
+        cmd.CommandText = "INSERT INTO Customer_Info values(@firstName, @middleName, @lastName, @phoneNumber, @email, @currentCustomer, @firstContact, @secondContact, thridContactDate)"
 
         cmd.Parameters.Add(New SqlParameter("@firstName", SqlDbType.VarChar, 50))
         cmd.Parameters("@firstName").Value = txt_firstName.Text
@@ -90,41 +120,23 @@ Public Class CustomerRelationshipSystem
 
 
         cmd.Parameters.Add(New SqlParameter("@phoneNumber", SqlDbType.VarChar, 50))
-        cmd.Parameters("@phoneNumber").Value = mtxt_phoneNumber.Text
-        pnumber.Add(mtxt_phoneNumber.Text)
+        cmd.Parameters("@phoneNumber").Value = txt_phoneNumber.Text
+        pnumber.Add(txt_phoneNumber.Text)
 
 
         cmd.Parameters.Add(New SqlParameter("@email", SqlDbType.VarChar, 50))
         cmd.Parameters("@email").Value = txt_Email.Text
         email.Add(txt_Email.Text)
 
-        cmd.Parameters.Add(New SqlParameter("@currentCustomer", SqlDbType.NChar, 10))
-        If rb_Yes.Checked = True Then
-            cmd.Parameters("@currentCustomer").Value = ("Yes")
-            currentCustomer.Add("Yes")
-        End If
-        If rb_No.Checked = True Then
-            cmd.Parameters("@currentCustomer").Value = ("No")
-            currentCustomer.Add("No")
-        End If
-
-        cmd.Parameters.Add(New SqlParameter("@firstContact", SqlDbType.Char, 10))
-        cmd.Parameters("@firstContact").Value = txt_firstContactDate.Text
-        firstContactDate.Add(txt_firstContactDate.Text)
-
-        cmd.Parameters.Add(New SqlParameter("@secondContact", SqlDbType.Char, 10))
-        cmd.Parameters("@secondContact").Value = ""
+        currentCustomer.Add("No")
         firstContactDate.Add("")
-
-        cmd.Parameters.Add(New SqlParameter("@thirdContact", SqlDbType.Char, 10))
-        cmd.Parameters("@thirdContact").Value = ""
-        firstContactDate.Add("")
-
-
+        secondContactDate.Add("")
+        thirdContactDate.Add("")
         '**************************END DATABASE INFORMATION**********************************************
 
         Try
             cmd.ExecuteNonQuery()
+            cmd2.ExecuteNonQuery()
             MessageBox.Show("Successful Database Insert")
             conn.Close()
         Catch ex As Exception
@@ -141,11 +153,11 @@ Public Class CustomerRelationshipSystem
         txt_firstName.Text = ""
         txt_middleName.Text = ""
         txt_lastName.Text = ""
-        mtxt_phoneNumber.Text = ""
+        txt_phoneNumber.Text = ""
         txt_Email.Text = ""
     End Sub
 
-    Private Sub txt_firstName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_firstName.KeyPress
+    Private Sub txt_firstName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         'TODO add code to verify that only alphabetical characters are entered
         If Asc(e.KeyChar) < 65 Or Asc(e.KeyChar) > 90 And Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122 Then
             e.Handled = True
@@ -153,7 +165,7 @@ Public Class CustomerRelationshipSystem
         End If
     End Sub
 
-    Private Sub txt_middleName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_middleName.KeyPress
+    Private Sub txt_middleName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         'TODO add code to verify that only alphabetical characters are entered
         If Asc(e.KeyChar) < 65 Or Asc(e.KeyChar) > 90 And Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122 Then
             e.Handled = True
@@ -161,7 +173,7 @@ Public Class CustomerRelationshipSystem
         End If
     End Sub
 
-    Private Sub txt_lastName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_lastName.KeyPress
+    Private Sub txt_lastName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         'TODO add code to verify that only alphabetical characters are entered
         If Asc(e.KeyChar) < 65 Or Asc(e.KeyChar) > 90 And Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122 Then
             e.Handled = True
@@ -212,7 +224,23 @@ Public Class CustomerRelationshipSystem
         End If
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs)
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        For i = 0 To email.Count - 1
+            If (email(i).Contains(txt_emailSearch.Text)) Then
+                txt_firstName.Text = ""
+                txt_middleName.Text = ""
+                txt_lastName.Text = ""
+                txt_phoneNumber.Text = ""
+                txt_Email.Text = ""
+            End If
+        Next
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim combobox As ComboBox = CType(sender, ComboBox)
 
 
@@ -222,7 +250,7 @@ Public Class CustomerRelationshipSystem
             txt_firstName.Text = pnumber(curValue)
             txt_lastName.Text = email(curValue)
             txt_Email.Text = fnames(curValue)
-            mtxt_phoneNumber.Text = lnames(curValue)
+            txt_phoneNumber.Text = lnames(curValue)
             txt_annualSales.Text = FormatCurrency(asales(curValue))
             txt_monthlySales.Text = FormatCurrency(msales(curValue))
             If (String.CompareOrdinal(currentCustomer(curValue), "YES")) Then
@@ -239,6 +267,21 @@ Public Class CustomerRelationshipSystem
                 txt_firstContactDate.ReadOnly = True
             End If
 
+            If (String.IsNullOrEmpty(secondContactDate(curValue))) Then
+                txt_secondContactDate.Text = ""
+                txt_secondContactDate.ReadOnly = False
+            Else
+                txt_secondContactDate.Text = secondContactDate(curValue)
+                txt_secondContactDate.ReadOnly = True
+            End If
+
+            If (String.IsNullOrEmpty(thirdContactDate(curValue))) Then
+                txt_thirdContactDate.Text = ""
+                txt_thirdContactDate.ReadOnly = False
+            Else
+                txt_thirdContactDate.Text = thirdContactDate(curValue)
+                txt_thirdContactDate.ReadOnly = True
+            End If
         End If
 
     End Sub
@@ -247,11 +290,17 @@ Public Class CustomerRelationshipSystem
         CustomerInfoBindingSource.Filter = DataGridViewColumnSortMode.Automatic
     End Sub
 
-    Private Sub btn_Update_Click_1(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
+    Private Sub RadioButton1_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        Dim i As Integer
+        For Each item As String In asales
+            If (Val(item) > 5000) Then
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+            End If
+            i = i + 1
+        Next
     End Sub
 End Class
