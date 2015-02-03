@@ -286,4 +286,11 @@ Public Class CustomerRelationshipSystem
 
     End Sub
 
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs)
+        CustomerInfoBindingSource.Filter = DataGridViewColumnSortMode.Automatic
+    End Sub
+
+    Private Sub btn_Update_Click_1(sender As Object, e As EventArgs) Handles btn_Update.Click
+
+    End Sub
 End Class

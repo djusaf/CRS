@@ -66,6 +66,16 @@ Partial Class CustomerRelationshipSystem
         Me.lbl_test = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MiddleNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PhoneNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CurrentCustomerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstContactDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SecondContactDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ThirdContactDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomerInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomersDataSet11BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomersDataSet11 = New Customer_Relationship_System.CustomersDataSet1()
@@ -77,16 +87,6 @@ Partial Class CustomerRelationshipSystem
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.CustomersDataSet1 = New Customer_Relationship_System.CustomersDataSet()
         Me.Customer_InfoTableAdapter = New Customer_Relationship_System.CustomersDataSet1TableAdapters.Customer_InfoTableAdapter()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MiddleNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PhoneNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CurrentCustomerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstContactDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SecondContactDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ThirdContactDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tbc_Info.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -111,7 +111,7 @@ Partial Class CustomerRelationshipSystem
         Me.tbc_Info.Location = New System.Drawing.Point(12, 14)
         Me.tbc_Info.Name = "tbc_Info"
         Me.tbc_Info.SelectedIndex = 0
-        Me.tbc_Info.Size = New System.Drawing.Size(1129, 502)
+        Me.tbc_Info.Size = New System.Drawing.Size(1129, 484)
         Me.tbc_Info.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.tbc_Info.TabIndex = 0
         '
@@ -129,7 +129,7 @@ Partial Class CustomerRelationshipSystem
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1015, 476)
+        Me.TabPage1.Size = New System.Drawing.Size(1121, 458)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Information"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -502,81 +502,24 @@ Partial Class CustomerRelationshipSystem
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1121, 476)
+        Me.TabPage2.Size = New System.Drawing.Size(1121, 458)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Contact"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.MiddleNameDataGridViewTextBoxColumn, Me.PhoneNumberDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.CurrentCustomerDataGridViewTextBoxColumn, Me.FirstContactDateDataGridViewTextBoxColumn, Me.SecondContactDateDataGridViewTextBoxColumn, Me.ThirdContactDateDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.CustomerInfoBindingSource
+        Me.DataGridView1.Enabled = False
         Me.DataGridView1.Location = New System.Drawing.Point(6, 6)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(1109, 464)
         Me.DataGridView1.TabIndex = 0
-        '
-        'CustomerInfoBindingSource
-        '
-        Me.CustomerInfoBindingSource.DataMember = "Customer_Info"
-        Me.CustomerInfoBindingSource.DataSource = Me.CustomersDataSet11BindingSource
-        '
-        'CustomersDataSet11BindingSource
-        '
-        Me.CustomersDataSet11BindingSource.DataSource = Me.CustomersDataSet11
-        Me.CustomersDataSet11BindingSource.Position = 0
-        '
-        'CustomersDataSet11
-        '
-        Me.CustomersDataSet11.DataSetName = "CustomersDataSet1"
-        Me.CustomersDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.ListView1)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1015, 476)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Quary"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(262, 12)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(401, 448)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "First Name"
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Last Name"
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Monthly Sales"
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Annual Sales"
-        '
-        'CustomersDataSet1
-        '
-        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
-        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Customer_InfoTableAdapter
-        '
-        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -638,6 +581,66 @@ Partial Class CustomerRelationshipSystem
         Me.ThirdContactDateDataGridViewTextBoxColumn.DataPropertyName = "thirdContactDate"
         Me.ThirdContactDateDataGridViewTextBoxColumn.HeaderText = "thirdContactDate"
         Me.ThirdContactDateDataGridViewTextBoxColumn.Name = "ThirdContactDateDataGridViewTextBoxColumn"
+        '
+        'CustomerInfoBindingSource
+        '
+        Me.CustomerInfoBindingSource.DataMember = "Customer_Info"
+        Me.CustomerInfoBindingSource.DataSource = Me.CustomersDataSet11BindingSource
+        '
+        'CustomersDataSet11BindingSource
+        '
+        Me.CustomersDataSet11BindingSource.DataSource = Me.CustomersDataSet11
+        Me.CustomersDataSet11BindingSource.Position = 0
+        '
+        'CustomersDataSet11
+        '
+        Me.CustomersDataSet11.DataSetName = "CustomersDataSet1"
+        Me.CustomersDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.ListView1)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(1121, 476)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Quary"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.ListView1.GridLines = True
+        Me.ListView1.Location = New System.Drawing.Point(262, 12)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(401, 448)
+        Me.ListView1.TabIndex = 0
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "First Name"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Last Name"
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Monthly Sales"
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Annual Sales"
+        '
+        'CustomersDataSet1
+        '
+        Me.CustomersDataSet1.DataSetName = "CustomersDataSet"
+        Me.CustomersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Customer_InfoTableAdapter
+        '
+        Me.Customer_InfoTableAdapter.ClearBeforeFill = True
         '
         'CustomerRelationshipSystem
         '
