@@ -290,7 +290,17 @@ Public Class CustomerRelationshipSystem
         CustomerInfoBindingSource.Filter = DataGridViewColumnSortMode.Automatic
     End Sub
 
-    Private Sub btn_Update_Click_1(sender As Object, e As EventArgs) Handles btn_Update.Click
-
+    Private Sub RadioButton1_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        Dim i As Integer
+        For Each item As String In asales
+            If (Val(item) > 5000) Then
+                Dim Populate As New ListViewItem
+                Populate = ListView1.Items.Add(fnames(i))
+                Populate.SubItems.Add(lnames(i))
+                Populate.SubItems.Add(asales(i))
+                Populate.SubItems.Add(msales(i))
+            End If
+            i = i + 1
+        Next
     End Sub
 End Class

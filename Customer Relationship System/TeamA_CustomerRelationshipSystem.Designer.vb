@@ -80,13 +80,17 @@ Partial Class CustomerRelationshipSystem
         Me.CustomersDataSet11BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomersDataSet11 = New Customer_Relationship_System.CustomersDataSet1()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.CustomersDataSet1 = New Customer_Relationship_System.CustomersDataSet()
         Me.Customer_InfoTableAdapter = New Customer_Relationship_System.CustomersDataSet1TableAdapters.Customer_InfoTableAdapter()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.First_Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Last_Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Annual_Sales = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Monthly_Sales = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbc_Info.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -101,6 +105,7 @@ Partial Class CustomerRelationshipSystem
         CType(Me.CustomersDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbc_Info
@@ -600,38 +605,46 @@ Partial Class CustomerRelationshipSystem
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.ListView1)
+        Me.TabPage3.Controls.Add(Me.GroupBox6)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1121, 476)
+        Me.TabPage3.Size = New System.Drawing.Size(1121, 458)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Quary"
+        Me.TabPage3.Text = "Query"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'ListView1
+        'RadioButton3
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(262, 12)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(401, 448)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(6, 65)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(199, 17)
+        Me.RadioButton3.TabIndex = 3
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Customers Recieving 5% Disconnect"
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
-        'ColumnHeader1
+        'RadioButton2
         '
-        Me.ColumnHeader1.Text = "First Name"
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton2.TabIndex = 2
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'ColumnHeader2
+        'RadioButton1
         '
-        Me.ColumnHeader2.Text = "Last Name"
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Monthly Sales"
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Annual Sales"
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton1.TabIndex = 1
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'CustomersDataSet1
         '
@@ -641,6 +654,44 @@ Partial Class CustomerRelationshipSystem
         'Customer_InfoTableAdapter
         '
         Me.Customer_InfoTableAdapter.ClearBeforeFill = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.RadioButton3)
+        Me.GroupBox6.Controls.Add(Me.RadioButton1)
+        Me.GroupBox6.Controls.Add(Me.RadioButton2)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 116)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(218, 94)
+        Me.GroupBox6.TabIndex = 4
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Discount"
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales})
+        Me.ListView1.Location = New System.Drawing.Point(227, 3)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(765, 402)
+        Me.ListView1.TabIndex = 5
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'First_Name
+        '
+        Me.First_Name.Text = "First Name"
+        '
+        'Last_Name
+        '
+        Me.Last_Name.Text = "Last Name"
+        '
+        'Annual_Sales
+        '
+        Me.Annual_Sales.Text = "Annual Sales"
+        '
+        'Monthly_Sales
+        '
+        Me.Monthly_Sales.Text = "Monthly Sales"
         '
         'CustomerRelationshipSystem
         '
@@ -670,6 +721,8 @@ Partial Class CustomerRelationshipSystem
         CType(Me.CustomersDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         CType(Me.CustomersDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -716,11 +769,6 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents lbl_test As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents ListView1 As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents CustomersDataSet1 As Customer_Relationship_System.CustomersDataSet
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents CustomersDataSet11BindingSource As System.Windows.Forms.BindingSource
@@ -737,5 +785,14 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents FirstContactDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SecondContactDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ThirdContactDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
+    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents First_Name As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Last_Name As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Annual_Sales As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Monthly_Sales As System.Windows.Forms.ColumnHeader
 
 End Class
