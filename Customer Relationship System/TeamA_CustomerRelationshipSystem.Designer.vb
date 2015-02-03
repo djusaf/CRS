@@ -91,6 +91,7 @@ Partial Class CustomerRelationshipSystem
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.CustomersDataSet1 = New Customer_Relationship_System.CustomersDataSet()
         Me.Customer_InfoTableAdapter = New Customer_Relationship_System.CustomersDataSet1TableAdapters.Customer_InfoTableAdapter()
+        Me.Discount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbc_Info.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -615,7 +616,7 @@ Partial Class CustomerRelationshipSystem
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.First_Name, Me.Last_Name, Me.Annual_Sales, Me.Monthly_Sales, Me.Discount})
         Me.ListView1.Location = New System.Drawing.Point(227, 3)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(765, 402)
@@ -626,29 +627,29 @@ Partial Class CustomerRelationshipSystem
         'First_Name
         '
         Me.First_Name.Text = "First Name"
-        Me.First_Name.Width = 127
+        Me.First_Name.Width = 150
         '
         'Last_Name
         '
         Me.Last_Name.Text = "Last Name"
-        Me.Last_Name.Width = 151
+        Me.Last_Name.Width = 159
         '
         'Annual_Sales
         '
         Me.Annual_Sales.Text = "Annual Sales"
-        Me.Annual_Sales.Width = 103
+        Me.Annual_Sales.Width = 150
         '
         'Monthly_Sales
         '
         Me.Monthly_Sales.Text = "Monthly Sales"
-        Me.Monthly_Sales.Width = 119
+        Me.Monthly_Sales.Width = 150
         '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.RadioButton3)
         Me.GroupBox6.Controls.Add(Me.RadioButton1)
         Me.GroupBox6.Controls.Add(Me.RadioButton2)
-        Me.GroupBox6.Location = New System.Drawing.Point(3, 116)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(218, 94)
         Me.GroupBox6.TabIndex = 4
@@ -696,6 +697,11 @@ Partial Class CustomerRelationshipSystem
         'Customer_InfoTableAdapter
         '
         Me.Customer_InfoTableAdapter.ClearBeforeFill = True
+        '
+        'Discount
+        '
+        Me.Discount.Text = "Discount Amount"
+        Me.Discount.Width = 150
         '
         'CustomerRelationshipSystem
         '
@@ -798,5 +804,6 @@ Partial Class CustomerRelationshipSystem
     Friend WithEvents Last_Name As System.Windows.Forms.ColumnHeader
     Friend WithEvents Annual_Sales As System.Windows.Forms.ColumnHeader
     Friend WithEvents Monthly_Sales As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Discount As System.Windows.Forms.ColumnHeader
 
 End Class

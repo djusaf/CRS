@@ -302,6 +302,7 @@ Public Class CustomerRelationshipSystem
                 Populate.SubItems.Add(lnames(i))
                 Populate.SubItems.Add(asales(i))
                 Populate.SubItems.Add(msales(i))
+                Populate.SubItems.Add(asales(i) * (1 - 0.25))
             ElseIf (Val(item) = 2) Then
                 ListView1.Refresh()
                 Dim Populate As New ListViewItem
@@ -309,6 +310,7 @@ Public Class CustomerRelationshipSystem
                 Populate.SubItems.Add(lnames(i))
                 Populate.SubItems.Add(asales(i))
                 Populate.SubItems.Add(msales(i))
+                Populate.SubItems.Add(asales(i) * (1 - 0.25))
             ElseIf (Val(item) = 2) Then
                 ListView1.Refresh()
                 Dim Populate As New ListViewItem
@@ -316,11 +318,16 @@ Public Class CustomerRelationshipSystem
                 Populate.SubItems.Add(lnames(i))
                 Populate.SubItems.Add(asales(i))
                 Populate.SubItems.Add(msales(i))
+                Populate.SubItems.Add(asales(i) * (1 - 0.25))
             End If
             i = i + 1
         Next
     End Sub
     Public Sub clearListView()
+
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
 
     End Sub
 End Class
