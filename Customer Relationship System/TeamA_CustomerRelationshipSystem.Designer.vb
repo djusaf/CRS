@@ -660,10 +660,10 @@ Partial Class CustomerRelationshipSystem
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Location = New System.Drawing.Point(6, 65)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(199, 17)
+        Me.RadioButton3.Size = New System.Drawing.Size(107, 17)
         Me.RadioButton3.TabIndex = 3
         Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Customers Recieving 5% Disconnect"
+        Me.RadioButton3.Text = "Platinum Sponsor"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'RadioButton1
@@ -671,10 +671,10 @@ Partial Class CustomerRelationshipSystem
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton1.Size = New System.Drawing.Size(88, 17)
         Me.RadioButton1.TabIndex = 1
         Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Customers Recieving 25% Disconnect"
+        Me.RadioButton1.Text = "Gold Member"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'RadioButton2
@@ -682,10 +682,10 @@ Partial Class CustomerRelationshipSystem
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(205, 17)
+        Me.RadioButton2.Size = New System.Drawing.Size(92, 17)
         Me.RadioButton2.TabIndex = 2
         Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Customers Recieving 15% Disconnect"
+        Me.RadioButton2.Text = "Silver Member"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'CustomersDataSet1
